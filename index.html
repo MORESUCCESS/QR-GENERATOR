@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="Author" content="MORE SUCCESS">
+        <meta name="Description" content="Designing a qr code generator using html css and javascript">
+        <title>QR Code generator &#128116;</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="elements">
+                <h1>QR CODE GENERATOR</h1>
+                <input type="text" placeholder="Enter a text or URL here..." id="qrtext" required>
+                <div id="imgbox">
+                    <img src=""  id="qr_image">
+                </div>
+                <button class="btn" onclick="generateQR()">Generate QR code</button>
+            </div>
+        </div>
+        <script>
+                let imgbox = document.getElementById("imgbox");
+                let qrimage = document.getElementById("qr_image");
+                let qrtext = document.getElementById("qrtext");
+
+            function generateQR(){
+                if(qrtext.value.length>0){
+                qrimage.src= "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + qrtext.value;           
+             }else{
+                alert("A text or URL is required!")
+             }
+            }
+        </script>
+    </body>
+</html>
